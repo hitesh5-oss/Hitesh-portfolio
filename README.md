@@ -170,8 +170,7 @@
             <p>Check out my work or get in touch below:</p>
             <div class="contact-links">
                 <a href="https://www.instagram.com/artifex_2474?igsh=NzB0b3lwcmFhaHMz" target="_blank">Instagram</a>
-                <a href="https://youtube.com/@hitesh-j6w5q?si=cr6-N99xbmZEUEkj" target="_blank">YouTube</a>
-                <a href="#" target="_blank">Portfolio Website</a>
+                <a href="https://youtube.com/@hitesh-j6w5q?si=cr6-N99xbmZEUEkj" target="_blank">YouTube</a
                 <a href="mailto:your.hiteshgupta0145@gmail.com">Email Me</a>
             </div>
         </section>
