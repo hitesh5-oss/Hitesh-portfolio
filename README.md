@@ -1,1 +1,182 @@
-# Hitesh-portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitesh Gupta | Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-color: #f9f9fb;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            float: right;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin-right: 15px;
+            text-decoration: none;
+            color: var(--white);
+            background-color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .contact-links a:hover {
+            background-color: #357abd;
+        }
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .date {
+                float: none;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hitesh Gupta</h1>
+        <div class="subtitle">Content Creator & AI Video Specialist</div>
+    </header>
+
+    <div class="container">
+        
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Creative and tech-enthusiastic professional with hands-on experience in digital content creation and AI tools. Proven ability to manage social media accounts and workflows. Passionate about producing AI-powered videos, User-Generated Content (UGC), and utilizing AI to streamline the creative process for brands and businesses.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <span class="date">March 2026 - Present</span>
+                <div class="job-title">Freelance Content Creator & Video Editor</div>
+                <ul>
+                    <li>Lead the creation and editing of engaging video content for various platforms.</li>
+                    <li>Utilize AI tools (like ChatGPT and Gemini) for scripting and prompt engineering to produce high-quality AI video advertisements.</li>
+                    <li>Design and execute UGC campaigns and marketing materials to boost brand visibility.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Languages</h2>
+            <div class="skills-grid">
+                <div>
+                    <strong>Technical Skills</strong>
+                    <ul>
+                        <li>AI Prompt Engineering</li>
+                        <li>AI Video Creation</li>
+                        <li>Canva Design</li>
+                        <li>Mobile Video Editing</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Soft Skills</strong>
+                    <ul>
+                        <li>Communication Skills</li>
+                        <li>Teamwork</li>
+                        <li>Adaptability</li>
+                        <li>Problem-Solving</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <strong>Languages:</strong> English, Hindi, Odia, Chhattisgarhi
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="job-title">Central Board of Secondary Education (CBSE)</div>
+                <ul>
+                    <li>Class 12: Currently Pursuing</li>
+                    <li>Class 10: 89.6%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Portfolio & Contact</h2>
+            <p>Check out my work or get in touch below:</p>
+            <div class="contact-links">
+                <a href="https://www.instagram.com/artifex_2474?igsh=NzB0b3lwcmFhaHMz" target="_blank">Instagram</a>
+                <a href="https://youtube.com/@hitesh-j6w5q?si=cr6-N99xbmZEUEkj" target="_blank">YouTube</a>
+                <a href="#" target="_blank">Portfolio Website</a>
+                <a href="mailto:your.hiteshgupta0145@gmail.com">Email Me</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
