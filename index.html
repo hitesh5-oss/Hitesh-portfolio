@@ -3,197 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hitesh Gupta | Portfolio</title>
+    <title>Hitesh Gupta | AI Video Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-color: #f9f9fb;
+            --primary: #4f46e5; /* Purple-blue */
+            --secondary: #7c3aed; /* Deep purple */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
             --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
         }
-        header {
-            background-color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
             color: var(--text-dark);
         }
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-top: 0.5rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
+
+        /* Container & Sections */
         section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 80px;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--gradient);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-placeholder {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Grid Layouts for Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards General */
+        .card {
             background: var(--white);
             padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Specific */
+        .portfolio-card {
+            padding: 0;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-container iframe, .video-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        /* Tools Section */
+        .tools-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .tool-badge {
+            background: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Pricing Section */
+        .pricing-card {
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
             margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
         }
-        .experience-item, .education-item {
-            margin-bottom: 1.5rem;
+
+        .pricing-card ul li {
+            margin-bottom: 0.8rem;
         }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+
+        .pricing-card ul li i {
+            font-size: 1rem;
+            margin-right: 10px;
         }
-        .date {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            float: right;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
             gap: 1rem;
+            flex-wrap: wrap;
         }
-        ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-        }
-        .contact-links a {
-            display: inline-block;
-            margin-right: 15px;
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
             color: var(--white);
-            background-color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: transform 0.3s;
         }
-        .contact-links a:hover {
-            background-color: #357abd;
+
+        .contact-btn:hover {
+            transform: scale(1.05);
         }
-        @media (max-width: 600px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
+
+        .bg-email { background: #ea4335; }
+        .bg-whatsapp { background: #25D366; }
+        .bg-instagram { background: #E1306C; }
+        .bg-youtube { background: #FF0000; }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                text-align: center;
             }
-            .date {
-                float: none;
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
                 display: block;
-                margin-bottom: 0.5rem;
+            }
+
+            #hero {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding-top: 120px;
+                padding-bottom: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .profile-placeholder {
+                width: 250px;
+                height: 250px;
+                margin-top: 3rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Hitesh Gupta</h1>
-        <div class="subtitle">Content Creator & AI Video Specialist</div>
-    </header>
+    <nav>
+        <div class="logo">Hitesh Gupta</div>
+        <i class="fas fa-bars menu-btn" onclick="toggleMenu()"></i>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#pricing" onclick="toggleMenu()">Pricing</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        
-        <section id="summary">
-            <h2>Summary</h2>
-            <p>Creative and tech-enthusiastic professional with hands-on experience in digital content creation and AI tools. Proven ability to manage social media accounts and workflows. Passionate about producing AI-powered videos, User-Generated Content (UGC), and utilizing AI to streamline the creative process for brands and businesses.</p>
-        </section>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>I Create AI Videos, Reels & Ads For Businesses</h1>
+            <p>Transform your brand with cutting-edge AI video editing, viral Instagram Reels, and highly engaging social media content designed to convert viewers into customers.</p>
+            <div>
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="profile-placeholder">
+                <span>[Your Image Here]</span>
+            </div>
+        </div>
+    </section>
 
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="experience-item">
-                <span class="date">March 2026 - Present</span>
-                <div class="job-title">Freelance Content Creator & Video Editor</div>
+    <section id="services">
+        <h2 class="section-title">My Services</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>AI Video Ads</h3>
+                <p>High-converting advertisements crafted using prompt engineering and advanced AI generation tools.</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram Reels</h3>
+                <p>Fast-paced, trendy edits with captions and effects designed to maximize algorithmic reach.</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-youtube"></i>
+                <h3>YouTube Shorts</h3>
+                <p>Engaging vertical content tailored for YouTube's specific audience and monetization standards.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Canva Social Media</h3>
+                <p>Beautiful, branded posts and carousels to keep your feed looking professional and cohesive.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-image"></i>
+                <h3>Thumbnails</h3>
+                <p>Clickable, high-CTR custom thumbnails that make your videos stand out in crowded feeds.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-briefcase"></i>
+                <h3>AI Videos for Business</h3>
+                <p>Corporate explainers and product showcases powered by AI to save you time and production costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background: var(--bg-light);">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
+            <div class="card portfolio-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/-KwFDwaZJu8" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Gaming Chair AI Advertisement</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 1rem;">Produced using AI prompt engineering and modern video editing techniques.</p>
+                    <a href="https://youtu.be/-KwFDwaZJu8" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Watch Video</a>
+                </div>
+            </div>
+
+            <div class="card portfolio-card">
+                <div class="video-container" style="background: #e2e8f0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-bolt" style="font-size: 4rem; color: #cbd5e1; margin:0;"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Electronics Brand Promo</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 1rem;">Dynamic UGC campaign and AI video series designed for local tech retailers like AR-Electronics.</p>
+                    <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+                </div>
+            </div>
+
+            <div class="card portfolio-card">
+                <div class="video-container" style="background: #e2e8f0; display:flex; align-items:center; justify-content:center;">
+                    <i class="fas fa-mobile-alt" style="font-size: 4rem; color: #cbd5e1; margin:0;"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Social Media Reel Set</h3>
+                    <p style="color: var(--text-gray); margin-bottom: 1rem;">A 30-day content calendar of edited reels designed to boost organic engagement.</p>
+                    <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-me">
+        <h2 class="section-title">Why Hire Me?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-rocket"></i>
+                <h3>Fast Delivery</h3>
+                <p>I respect deadlines. Get your content delivered quickly without compromising on quality.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Creative Content</h3>
+                <p>Out-of-the-box thinking tailored to your unique brand voice and target demographic.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>AI Powered</h3>
+                <p>I leverage the latest AI tech to do things faster, better, and more uniquely than traditional methods.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tags"></i>
+                <h3>Affordable Pricing</h3>
+                <p>Premium quality videos and edits at competitive rates that fit modern business budgets.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" style="background: var(--bg-light); text-align: center;">
+        <h2 class="section-title">Tools I Use</h2>
+        <div class="tools-flex">
+            <div class="tool-badge"><i class="fas fa-magic"></i> Canva</div>
+            <div class="tool-badge"><i class="fas fa-comment-dots"></i> ChatGPT</div>
+            <div class="tool-badge"><i class="fas fa-brain"></i> Gemini Pro</div>
+            <div class="tool-badge"><i class="fas fa-water"></i> Flow AI</div>
+            <div class="tool-badge"><i class="fas fa-video"></i> InShot</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; color: var(--text-gray);">
+            <p>Hi, I'm Hitesh! I am a dedicated Content Creator and AI Video Specialist based in Raigarh, Chhattisgarh. Having recently completed my 12th board exams with a strong academic foundation, I am fully focused on my passion for digital media.</p>
+            <p style="margin-top: 1rem;">I specialize in helping businesses and local brands—much like my recent work as Lead Creator and Editor for Shadangi Electronics—grow their online presence. Whether you need an eye-catching AI ad, a seamless video edit, or a complete UGC social media campaign, I bring creativity, technical skill, and the power of modern AI tools to every project.</p>
+        </div>
+    </section>
+
+    <section id="pricing" style="background: var(--bg-light);">
+        <h2 class="section-title">Pricing Packages</h2>
+        <div class="grid" style="max-width: 800px; margin: 0 auto;">
+            <div class="card pricing-card">
+                <h3>Standard</h3>
+                <div class="price">₹/$$</div>
                 <ul>
-                    <li>Lead the creation and editing of engaging video content for various platforms.</li>
-                    <li>Utilize AI tools (like ChatGPT and Gemini) for scripting and prompt engineering to produce high-quality AI video advertisements.</li>
-                    <li>Design and execute UGC campaigns and marketing materials to boost brand visibility.</li>
+                    <li><i class="fas fa-check"></i> 4 Instagram Reels / YT Shorts</li>
+                    <li><i class="fas fa-check"></i> Basic AI Scripting</li>
+                    <li><i class="fas fa-check"></i> Standard Video Editing</li>
+                    <li><i class="fas fa-check"></i> 2 Canva Posts</li>
+                    <li><i class="fas fa-check"></i> 3 Days Delivery</li>
                 </ul>
+                <a href="#contact" class="btn btn-outline" style="width: 100%; margin:0;">Get Started</a>
             </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills & Languages</h2>
-            <div class="skills-grid">
-                <div>
-                    <strong>Technical Skills</strong>
-                    <ul>
-                        <li>AI Prompt Engineering</li>
-                        <li>AI Video Creation</li>
-                        <li>Canva Design</li>
-                        <li>Mobile Video Editing</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong>Soft Skills</strong>
-                    <ul>
-                        <li>Communication Skills</li>
-                        <li>Teamwork</li>
-                        <li>Adaptability</li>
-                        <li>Problem-Solving</li>
-                    </ul>
-                </div>
-            </div>
-            <div style="margin-top: 1rem;">
-                <strong>Languages:</strong> English, Hindi, Odia, Chhattisgarhi
-            </div>
-        </section>
-                <section id="demos">
-            <h2>AI Video Demos</h2>
             
-            <div class="video-demo-item" style="margin-bottom: 2rem;">
-                <h3 class="job-title">Gaming Chair AI Advertisement</h3>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Created using AI prompt engineering and modern video editing techniques.</p>
-                
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-                        src="https://www.youtube.com/embed/-KwFDwaZJu8" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-                </section>
-        
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="job-title">Central Board of Secondary Education (CBSE)</div>
+            <div class="card pricing-card popular">
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gradient); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">MOST POPULAR</div>
+                <h3>Custom</h3>
+                <div class="price">Let's Talk</div>
                 <ul>
-                    <li>Class 12: Currently Pursuing</li>
-                    <li>Class 10: 89.6%</li>
+                    <li><i class="fas fa-check"></i> Custom AI Video Ads</li>
+                    <li><i class="fas fa-check"></i> Advanced Prompt Engineering</li>
+                    <li><i class="fas fa-check"></i> Full Social Media Management</li>
+                    <li><i class="fas fa-check"></i> Custom Thumbnails</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
                 </ul>
+                <a href="#contact" class="btn btn-primary" style="width: 100%;">Contact Me</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Portfolio & Contact</h2>
-            <p>Check out my work or get in touch below:</p>
-            <div class="contact-links">
-                <a href="https://www.instagram.com/artifex_2474?igsh=NzB0b3lwcmFhaHMz" target="_blank">Instagram</a>
-                <a href="https://youtube.com/@hitesh-j6w5q?si=cr6-N99xbmZEUEkj" target="_blank">YouTube</a>
-                <a href="mailto:your.hiteshgupta0145@gmail.com">Email Me</a>
-            </div>
-        </section>
-
-    </div>
-
-</body>
-</html>
-
+    <section id="contact">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);">Ready to elevate your brand's content? Reach out to me on any platform below.</p>
         
+        <div class="contact-links">
+            <a href="mailto:your.hiteshgupta0145@gmail.com" class="contact-btn bg-email">
+                <i class="fas fa-envelope"></i> Email Me
+            </a>
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-btn bg-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a
